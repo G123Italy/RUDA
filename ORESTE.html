@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="RUDA.png">
+    <title>RUDA</title>
+    <meta name="description" content="Dance Camp estivo a Gaeta: un'esperienza completa per chi ama la danza. Prenota ora." />
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Bootstrap Icons (opzionale ma utile) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+      :root { --hero-overlay: rgba(0,0,0,.45); }
+      .hero {
+        min-height: 92vh;
+        background:
+          linear-gradient(var(--hero-overlay), var(--hero-overlay)),
+          url("background.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      /* Carousel arrow button visibility */
+      .carousel-control-prev, .carousel-control-next {
+        filter: none;
+      }
+      .carousel-control-prev-icon, .carousel-control-next-icon {
+        background-color: #fff;
+        border-radius: 50%;
+        border: 1px solid #14162d;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        width: 2.5rem;
+        height: 2.5rem;
+        background-size: 60% 60%;
+      }
+      .badge-soft {
+        background: rgba(255,255,255,.14);
+        border: 1px solid rgba(255,255,255,.22);
+        color: #fff;
+      }
+      .section-pad { padding: 5rem 0; }
+      .card-hover { transition: transform .15s ease, box-shadow .15s ease; }
+      .card-hover:hover { transform: translateY(-2px); box-shadow: 0 1rem 2rem rgba(0,0,0,.08); }
+      .anchor-offset { scroll-margin-top: 90px; }
+      .form-control:focus, .form-select:focus { box-shadow: none; }
+      .container-sm{overflow:hidden}
+
+.menu-container {
+  position: fixed;      /* stays in place */
+  top: 20px;
+  left: 20px;
+}
+
+/* Button */
+#menuBtn {
+  position: relative;
+  z-index: 10;
+}
+
+/* Side navbar */
+#sideNav {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  height: 65px;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;        /* 👈 vertical center */
+  justify-content: center;    /* 👈 horizontal center */
+
+  white-space: nowrap;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+
+  z-index: 5;
+
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0px 10px 5px rgba(0,0,0,0.3);
+}
+
+#sideNav a {
+  padding: 12px 16px;
+  color: #14162d;
+  text-decoration: none;
+}
+
+#sideNav a:hover {
+  background: #cfcfcf;
+}
+
+/* Open state */
+#sideNav.open {
+  transform: scaleX(1);
+}
+
+/* Button stays fixed */
+.img-button {
+  width: 180px;
+  height: 65px;
+
+  padding: 0;
+
+  background: #ffffff;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+
+  border-radius: 10px 0 0 10px;
+  border: 0px solid transparent; /* keeps visual box */
+  box-shadow: 0px 10px 5px rgba(0,0,0,0.3);
+
+}
+
+/* Image inside */
+.img-button img {
+  height: 95%;
+  object-fit: contain;
+
+  border-radius: 0;
+  
+  transition: transform 0.25s ease-in-out; /* smooth zoom */
+}
+
+/* Hover effect: only image zooms */
+.img-button:hover img {
+  transform: scale(1.15);     /* 👈 zoom image only */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      .navbar {
+        border:none;
+        max-width:84vw;
+        width:84vw;
+        left:100px;
+        transform:translateX(-50%);
+        margin-top:0;
+        z-index:0;
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        border: none !important;
+      }
+
+      /* Navbar link hover effect */
+      .navbar .nav-link {
+        vertical-align: center;
+        transition: transform 0.2s, text-decoration 0.2s;
+        color: #14162d !important;  /* Custom navbar link color */
+      }
+      .navbar .nav-link:hover {
+        transform: scale(1.15);
+        text-decoration: underline;
+      }
+          
+      /* Responsive navbar width: larger on desktop, smaller on mobile */
+      .responsive-navbar {
+       transition: width 0.25s, max-width 0.25s;
+      }
+      
+      .navbar-toggler {
+        background-color: #fff;
+      }
+      .navbar-toggler .bi-list {
+        display: none !important;
+      }
+      .navbar-toggler .logo-toggler {
+        display: inline-block !important;
+        height: 58px;
+      }
+
+    </style>
+  </head>
+
+  <body style="margin:0; padding:0;">
+    <!-- NAV -->
+
+
+
+<div class="menu-container">
+  <button id="menuBtn" class="img-button" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Apri menu di navigazione">
+    <img src="logo-ruda-hamburger.png" alt="Menu"/>
+  </button>
+
+  <nav id="sideNav">
+    <a class="nav-link" href="#chisiamo"><strong>CHI SIAMO</strong></a>
+    <a class="nav-link" href="#insegnanti"><strong>I NOSTRI INSEGNANTI</strong></a>
+    <a class="nav-link" href="#programma"><strong>PROGRAMMA</strong></a>
+    <a class="nav-link" href="#location"><strong>RASSEGNA</strong></a>
+    <a class="nav-link" href="#contattaci"><strong>CONTATTACI</strong></a>
+    <a class="nav-link" href="#faq"><strong>FAQ</strong></a>
+  </nav>
+</div>
+
+    <!-- HERO -->
+    <header class="hero d-flex align-items-center text-white" style="margin-top:0;">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <h1 class="display-4 fw-bold lh-1">
+              RUDA 2026
+            </h1>
+            <p class="lead mt-3 mb-4">
+              Migliora il tuo stile partecipando a 3 giorni dedicati alla danza, dove Maestri di alto livello, avranno come solo obiettivo la vostra crescita.<br>
+              Posti limitati, blocca subito il tuo!
+            </p>
+            
+
+            <div class="d-flex flex-wrap gap-2">
+              <a href="#programma" class="btn btn-outline-light btn-lg">
+                Scopri il programma
+              </a>
+            </div>
+            <br>
+            <span class="badge badge-soft rounded-pill px-3 py-2 mb-3">
+              <div class="d-flex align-items-center gap-2">
+                <span>
+                  <i class="bi bi-calendar-event"></i>
+                  <strong>Data:</strong> Luglio 2026
+                </span>
+              </div>
+            </span>
+            <span class="badge badge-soft rounded-pill px-3 py-2 mb-3">
+              <div class="d-flex align-items-center gap-2">
+                <span>
+                  <i class="bi bi-geo-alt me-1"></i>
+                  <strong>Luogo:</strong> Gaeta (LT)
+                </span>
+              </div>
+            </span>
+            <span class="badge badge-soft rounded-pill px-3 py-2 mb-3">
+              <div class="d-flex align-items-center gap-2">
+                <span>
+                  <i class="bi bi-people"></i>
+                  <strong>Capienza:</strong> posti limitati
+                </span>
+              </div>
+            </span>
+          </div>
+
+          <div class="col-lg-5">
+            <div id="passCarousel" class="carousel slide" data-bs-ride="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="card shadow-lg border-0" style="min-height: 410px; height: 410px;">
+                    <div class="card-body p-4 d-flex flex-column h-100" style="padding:2rem; transform:scale(0.9);">
+                      <h5 class="card-title fw-semibold mb-1">STANDARD</h5>
+                      <div class="d-flex align-items-end gap-2 mb-3">
+                        <div class="display-6 fw-bold">300€</div>
+                      </div>
+                      <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Lezioni STANDARD + braccialetto</li>
+                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Convenzioni alloggio</li>
+                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Convenzioni food & drink</li>
+                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Iscrizione rassegna scontata</li>
+                      </ul>
+                      <a class="btn btn-primary w-100" href="#prenota">
+                        Vai alla prenotazione <i class="bi bi-arrow-right-circle me-1"></i>
+                      </a>
+                      <p class="small text-muted mt-3 mb-0">
+                        * Costi di iscrizione per la rassegna a parte (vedere sezione RASSEGNA).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card shadow-lg border-0" style="min-height: 410px; height: 410px;">
+                    <div class="card-body p-4 d-flex flex-column h-100" style="padding:2rem; transform:scale(0.9);">
+                      <h5 class="card-title fw-semibold mb-1">KIDS</h5>
+                      <div class="d-flex align-items-end gap-2 mb-3">
+                        <div class="display-6 fw-bold">250€</div>
+                      </div>
+                      <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Lezioni KIDS + braccialetto</li>
+                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Convenzioni alloggio</li>
+                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Convenzioni food & drink</li>
+                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Iscrizione rassegna scontata</li>
+                      </ul>
+                      <a class="btn btn-primary w-100" href="#prenota">
+                        <i class="bi bi-arrow-right-circle me-1"></i> Vai alla prenotazione
+                      </a>
+                      <p class="small text-muted mt-3 mb-0">
+                        * Costi di iscrizione per la rassegna a parte (vedere sezione RASSEGNA).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#passCarousel" data-bs-slide="prev" style="width: 2.5rem;">
+                <span style="display:flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 8L12 16L20 24" stroke="#14162d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="visually-hidden">Precedente</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#passCarousel" data-bs-slide="next" style="width: 2.5rem;">
+                <span style="display:flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 8L20 16L12 24" stroke="#14162d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="visually-hidden">Successiva</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- EVENTO -->
+    <section id="evento" class="section-pad anchor-offset">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h2 class="fw-bold">Perché venire</h2>
+            <p class="text-muted">
+              Un’esperienza estiva completa nel cuore della costa laziale: atmosfera vacanza, mare, attività leggere
+              e un programma pensato per far vivere Gaeta dal pomeriggio alla notte.
+            </p>
+
+            <div class="row g-3 mt-2">
+              <div class="col-sm-6">
+                <div class="p-3 border rounded-4 h-100">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-music-note-beamed fs-4"></i>
+                    <h6 class="mb-0 fw-semibold">Live & DJ set</h6>
+                  </div>
+                  <p class="mb-0 text-muted small">Artisti emergenti, vibrazioni estive, energia sul mare.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 border rounded-4 h-100">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-cup-straw fs-4"></i>
+                    <h6 class="mb-0 fw-semibold">Food & drink</h6>
+                  </div>
+                  <p class="mb-0 text-muted small">Street food, specialità locali e cocktail bar.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 border rounded-4 h-100">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-sunset fs-4"></i>
+                    <h6 class="mb-0 fw-semibold">Tramonto</h6>
+                  </div>
+                  <p class="mb-0 text-muted small">Momenti “golden hour” con vista e foto spot.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 border rounded-4 h-100">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-stars fs-4"></i>
+                    <h6 class="mb-0 fw-semibold">Esperienze</h6>
+                  </div>
+                  <p class="mb-0 text-muted small">Giochi in spiaggia, workshop, attività soft.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
+              <!-- Sostituisci con video YouTube/Instagram embed del tuo evento -->
+              <iframe
+                src="https://www.youtube.com/embed/Scxs7L0vhZ4"
+                title="Video evento"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <p class="small text-muted mt-2 mb-0">
+              Suggerimento: inserisci qui un video promo dell’edizione precedente o un trailer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMMA -->
+    <section id="programma" class="section-pad bg-light anchor-offset">
+      <div class="container">
+        <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+          <div>
+            <h2 class="fw-bold mb-1">Programma</h2>
+            <p class="text-muted mb-0">Esempio di timeline modificabile.</p>
+          </div>
+          <span class="badge text-bg-white border">Aggiornamenti in arrivo</span>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6 col-lg-3">
+            <div class="card card-hover h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <h6 class="fw-semibold mb-0">Apertura</h6>
+                  <span class="text-muted small">18:00</span>
+                </div>
+                <p class="text-muted small mt-2 mb-0">Check-in, braccialetti e welcome drink.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card card-hover h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <h6 class="fw-semibold mb-0">Sunset set</h6>
+                  <span class="text-muted small">19:30</span>
+                </div>
+                <p class="text-muted small mt-2 mb-0">Musica soft + area foto al tramonto.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card card-hover h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <h6 class="fw-semibold mb-0">Live show</h6>
+                  <span class="text-muted small">21:30</span>
+                </div>
+                <p class="text-muted small mt-2 mb-0">Band/ospite principale + sorprese.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card card-hover h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                  <h6 class="fw-semibold mb-0">DJ set</h6>
+                  <span class="text-muted small">23:00</span>
+                </div>
+                <p class="text-muted small mt-2 mb-0">Dancefloor fino a tarda notte.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-1">
+          <div class="col-lg-7">
+            <div class="p-4 bg-white border rounded-4 h-100">
+              <h5 class="fw-semibold mb-2">Cosa include il pass</h5>
+              <div class="row g-2 small text-muted">
+                <div class="col-sm-6"><i class="bi bi-dot"></i> Accesso evento</div>
+                <div class="col-sm-6"><i class="bi bi-dot"></i> Area relax</div>
+                <div class="col-sm-6"><i class="bi bi-dot"></i> Attività in spiaggia</div>
+                <div class="col-sm-6"><i class="bi bi-dot"></i> Convenzioni food/drink</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="p-4 bg-white border rounded-4 h-100">
+              <h5 class="fw-semibold mb-2">Extra (opzionali)</h5>
+              <p class="text-muted small mb-0">
+                Tavoli, area VIP, pacchetti gruppi, partnership brand. Inserisci qui le tue opzioni.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section id="location" class="section-pad anchor-offset">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5">
+            <h2 class="fw-bold">Gaeta, tra mare e storia</h2>
+            <p class="text-muted">
+              Inserisci l’area precisa (spiaggia, lido, piazza o location privata) e le info di accesso.
+              Qui sotto trovi una mappa “placeholder” con Gaeta.
+            </p>
+
+            <div class="d-grid gap-2">
+              <a class="btn btn-outline-primary" href="#prenota">
+                <i class="bi bi-compass me-1"></i> Come arrivare / Prenota
+              </a>
+              <a class="btn btn-outline-secondary" href="mailto:info@tuoevento.it">
+                <i class="bi bi-envelope me-1"></i> Contatti
+              </a>
+            </div>
+
+            <div class="mt-4 small text-muted">
+              <div class="d-flex gap-2 align-items-start mb-2">
+                <i class="bi bi-car-front"></i>
+                <span><strong>Parcheggio:</strong> info parcheggi/servizi navetta</span>
+              </div>
+              <div class="d-flex gap-2 align-items-start">
+                <i class="bi bi-train-front"></i>
+                <span><strong>Trasporti:</strong> stazione più vicina + collegamenti</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm border">
+              <iframe
+                title="Mappa Gaeta"
+                src="https://www.google.com/maps?q=Gaeta&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRENOTA -->
+    <section id="prenota" class="section-pad bg-light anchor-offset">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <h2 class="fw-bold">Prenota il tuo posto</h2>
+            <p class="text-muted">
+              Questo è un form demo. Puoi collegarlo a: Formspree, Google Forms, Mailchimp, oppure a un backend tuo.
+            </p>
+
+            <div class="alert alert-info d-flex align-items-start gap-2" role="alert">
+              <i class="bi bi-info-circle mt-1"></i>
+              <div class="small">
+                <strong>Tip:</strong> sostituisci “Agosto 2026” con la data reale e aggiungi i link ai biglietti (Eventbrite, Dice, ecc.).
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <form>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label">Nome</label>
+                      <input type="text" class="form-control" placeholder="Mario" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Cognome</label>
+                      <input type="text" class="form-control" placeholder="Rossi" required>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Email</label>
+                      <input type="email" class="form-control" placeholder="mario@email.it" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Numero biglietti</label>
+                      <select class="form-select">
+                        <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Fascia oraria</label>
+                      <select class="form-select">
+                        <option>Pomeriggio + Sera</option>
+                        <option>Sera</option>
+                        <option>Notte</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Note (opzionale)</label>
+                      <textarea class="form-control" rows="3" placeholder="Es. tavolo, allergie, richieste..."></textarea>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="privacy" required>
+                        <label class="form-check-label small text-muted" for="privacy">
+                          Acconsento al trattamento dei dati per finalità organizzative dell’evento.
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-12 d-grid">
+                      <button class="btn btn-primary btn-lg" type="submit">
+                        <i class="bi bi-send me-1"></i> Invia richiesta
+                      </button>
+                    </div>
+                    <p class="small text-muted mb-0">
+                      Oppure scrivici su WhatsApp: <span class="fw-semibold">+39 000 000 0000</span>
+                    </p>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-pad anchor-offset">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h2 class="fw-bold">FAQ</h2>
+            <p class="text-muted mb-0">
+              Risposte rapide alle domande più comuni. Personalizzale con regole reali dell’evento.
+            </p>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAcc">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f1">
+                    È possibile acquistare sul posto?
+                  </button>
+                </h2>
+                <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
+                  <div class="accordion-body text-muted">
+                    Sì, finché ci sono posti disponibili. Consigliamo la prenotazione online.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2">
+                    C’è un dress code?
+                  </button>
+                </h2>
+                <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                  <div class="accordion-body text-muted">
+                    Casual estivo. Scarpe comode consigliate (sabbia/area outdoor).
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3">
+                    In caso di maltempo?
+                  </button>
+                </h2>
+                <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                  <div class="accordion-body text-muted">
+                    Prevediamo piano B / rimborso secondo policy. Inserisci qui le regole reali.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4">
+                    Come contattarvi?
+                  </button>
+                </h2>
+                <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+                  <div class="accordion-body text-muted">
+                    Email: info@tuoevento.it — Instagram: @tuoevento — WhatsApp: +39 000 000 0000
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-top py-4">
+      <div class="container">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-6 text-muted small">
+            © <span id="year"></span> Estate a Gaeta — Tutti i diritti riservati
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a class="text-decoration-none me-3" href="#"><i class="bi bi-instagram"></i></a>
+            <a class="text-decoration-none me-3" href="#"><i class="bi bi-tiktok"></i></a>
+            <a class="text-decoration-none" href="#"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      function showSidebar(){
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+          sidebar.style.display = 'flex';
+          nav.style.display = 'none';
+        } else {
+          sidebar.style.display = 'none';
+          nav.style.display = 'flex';
+        }
+      }
+    </script>
+
+    <script>
+      const btn = document.getElementById("menuBtn");
+      const nav = document.getElementById("sideNav");
+
+      btn.addEventListener("click", () => {
+        nav.classList.toggle("open");
+      });
+    </script>
+
+  </body>
+</html>
