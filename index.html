@@ -323,7 +323,7 @@
           <div class="col-lg-6">
             <div class="card border-0 shadow-sm">
               <div class="card-body p-4">
-                <form>
+                <form action="invia.php" method="POST">
                   <div class="row g-3">
                     <div class="col-md-6">
                       <label class="form-label">Nome</label>
@@ -341,9 +341,15 @@
                       <label class="form-label">Note</label>
                       <textarea class="form-control" rows="3" placeholder="Chiedi tutte le informazioni di cui hai bisogno..."></textarea>
                     </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="privacy" required>
+                        <label class="form-check-label small text-muted" for="privacy">
+                          Acconsento al trattamento dei dati per finalità organizzative dell’evento.
+                        </label>
+                    </div>
                     <div class="col-12 d-grid">
                       <button class="btn btn-primary btn-lg" type="submit">
-                        <i class="bi bi-send me-1"></i> Invia richiesta (WIP)
+                        <i class="bi bi-send me-1"></i> Invia richiesta
                       </button>
                     </div>
                     <p class="small text-muted mb-0">
@@ -388,6 +394,7 @@
 
   </body>
 </html>
+
 
 
 
