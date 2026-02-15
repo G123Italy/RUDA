@@ -16,26 +16,13 @@
     <style>
       :root { --hero-overlay: rgba(0,0,0,.45); }
       .hero {
-        min-height: 92vh;
-        background:
-          linear-gradient(var(--hero-overlay), var(--hero-overlay)),
-          url("background.png");
+        min-height: 75vh;
+        background: url("background.png");
         background-size: cover;
-        background-position: center;
+        background-position: left;
+        background-repeat: no-repeat;
       }
-      /* Carousel arrow button visibility */
-      .carousel-control-prev, .carousel-control-next {
-        filter: none;
-      }
-      .carousel-control-prev-icon, .carousel-control-next-icon {
-        background-color: #fff;
-        border-radius: 50%;
-        border: 1px solid #14162d;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        width: 2.5rem;
-        height: 2.5rem;
-        background-size: 60% 60%;
-      }
+
       .badge-soft {
         background: rgba(255,255,255,.14);
         border: 1px solid rgba(255,255,255,.22);
@@ -53,6 +40,8 @@
   top: 20px;
   left: 20px;
 }
+
+
 
 /* Button */
 #menuBtn {
@@ -138,10 +127,10 @@
   transform: scale(1.15);     /* 👈 zoom image only */
 }
 
-
-
-
-
+.btn-secondary:hover{
+  background-color: #0994dd;
+  border-color:#0994dd
+}
 
       /* Navbar link hover effect */
       .navbar .nav-link {
@@ -191,12 +180,12 @@
 </div>
 
     <!-- HERO -->
-    <header class="hero d-flex align-items-center text-white" style="margin-top:0;">
+    <header class="hero d-flex align-items-center" style="color: #14162d;">
       <div class="container">
         <div class="row align-items-center g-4">
-          <div class="col-lg-7">
+          <div class="col-lg-7" >
             <h1 class="display-4 fw-bold lh-1">
-              RUDA 2026
+              <br><br><br><br><br><br><br>III EDIZIONE
             </h1>
             <p class="lead mt-3 mb-4">
               Migliora il tuo stile partecipando a 3 giorni dedicati alla danza, dove Maestri di alto livello, avranno come solo obiettivo la vostra crescita.<br>
@@ -204,29 +193,29 @@
             </p>
             
 
-            <div class="d-flex flex-wrap gap-2">
-              <a href="#programma" class="btn btn-outline-light btn-lg">
+            <div class="d-flex flex-wrap gap-2" style="color: #14162d;">
+              <a href="#programma" class="btn btn-secondary btn-lg">
                 Scopri il programma
               </a>
             </div>
             <br>
-            <span class="badge badge-soft rounded-pill px-3 py-2 mb-3">
+            <span class="badge badge-soft rounded-pill px-3 py-2 mb-3" style="background-color: #14162d;">
               <div class="d-flex align-items-center gap-2">
                 <span>
                   <i class="bi bi-calendar-event"></i>
-                  <strong>Data:</strong> Luglio 2026
+                  <strong>Data:</strong> 8-9-10 Luglio 2026
                 </span>
               </div>
             </span>
-            <span class="badge badge-soft rounded-pill px-3 py-2 mb-3">
+            <span class="badge badge-soft rounded-pill px-3 py-2 mb-3" style="background-color: #14162d;">
               <div class="d-flex align-items-center gap-2">
                 <span>
                   <i class="bi bi-geo-alt me-1"></i>
-                  <strong>Luogo:</strong> Gaeta (LT)
+                    <strong>Luogo:</strong> Gaeta (LT)
                 </span>
               </div>
             </span>
-            <span class="badge badge-soft rounded-pill px-3 py-2 mb-3">
+            <span class="badge badge-soft rounded-pill px-3 py-2 mb-3" style="background-color: #14162d;">
               <div class="d-flex align-items-center gap-2">
                 <span>
                   <i class="bi bi-people"></i>
@@ -235,76 +224,10 @@
               </div>
             </span>
           </div>
-
-          <div class="col-lg-5">
-            <div id="passCarousel" class="carousel slide" data-bs-ride="false">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="card shadow-lg border-0" style="min-height: 410px; height: 410px;">
-                    <div class="card-body p-4 d-flex flex-column h-100" style="padding:2rem; transform:scale(0.9);">
-                      <h5 class="card-title fw-semibold mb-1">STANDARD</h5>
-                      <div class="d-flex align-items-end gap-2 mb-3">
-                        <div class="display-6 fw-bold"></div>
-                      </div>
-                      <ul class="list-unstyled mb-4">
-                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Lezioni STANDARD + braccialetto</li>
-                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Convenzioni alloggio</li>
-                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Convenzioni food & drink</li>
-                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Iscrizione rassegna scontata</li>
-                      </ul>
-                      <a class="btn btn-primary w-100" href="#prenota">
-                        Vai alla prenotazione <i class="bi bi-arrow-right-circle me-1"></i>
-                      </a>
-                      <p class="small text-muted mt-3 mb-0">
-                        * Costi di iscrizione per la rassegna a parte (vedere sezione RASSEGNA).
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="card shadow-lg border-0" style="min-height: 410px; height: 410px;">
-                    <div class="card-body p-4 d-flex flex-column h-100" style="padding:2rem; transform:scale(0.9);">
-                      <h5 class="card-title fw-semibold mb-1">KIDS</h5>
-                      <div class="d-flex align-items-end gap-2 mb-3">
-                        <div class="display-6 fw-bold"></div>
-                      </div>
-                      <ul class="list-unstyled mb-4">
-                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Lezioni KIDS + braccialetto</li>
-                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Convenzioni alloggio</li>
-                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Convenzioni food & drink</li>
-                        <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i> Iscrizione rassegna scontata</li>
-                      </ul>
-                      <a class="btn btn-primary w-100" href="#prenota">
-                        <i class="bi bi-arrow-right-circle me-1"></i> Vai alla prenotazione
-                      </a>
-                      <p class="small text-muted mt-3 mb-0">
-                        * Costi di iscrizione per la rassegna a parte (vedere sezione RASSEGNA).
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#passCarousel" data-bs-slide="prev" style="width: 2.5rem;">
-                <span style="display:flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 8L12 16L20 24" stroke="#14162d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <span class="visually-hidden">Precedente</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#passCarousel" data-bs-slide="next" style="width: 2.5rem;">
-                <span style="display:flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 8L20 16L12 24" stroke="#14162d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <span class="visually-hidden">Successiva</span>
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </header>
+
 
     <!-- LOCATION -->
     <section id="location" class="section-pad anchor-offset">
@@ -425,17 +348,6 @@
 
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
