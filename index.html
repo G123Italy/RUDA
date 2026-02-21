@@ -38,7 +38,7 @@
 
     <meta property="og:title" content="RUDA" />
     <meta property="og:description" content="Camp estivo di Danza a Gaeta, tre giorni di stage, laboratori e rassegna finale nella splendida Gaeta. Un’esperienza unica di danza sul mare." />
-    <meta property="og:image" content="https://rivieradiulisseindanza.com/background_desktop.png" />
+    <meta property="og:image" content="https://rivieradiulisseindanza.com/background_desktop_locked.png" />
     <meta property="og:url" content="https://rivieradiulisseindanza.com/" />
     <meta property="og:type" content="website" />
 
@@ -52,14 +52,14 @@
     <!-- Bootstrap Icons (opzionale ma utile) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
-    <link rel="preload" as="image" href="background_desktop.png">
+    <link rel="preload" as="image" href="background_desktop_locked.png">
 
     <style>
       :root { --hero-overlay: rgba(0,0,0,.45); }
       .hero {
         width: 100%;
         height: 91vh;
-        background-image: url("background_desktop.png");
+        background-image: url("background_desktop_locked.png");
         background-size: cover; 
         background-position: center; 
         background-repeat: no-repeat;
@@ -69,7 +69,7 @@
         .hero {
         width: 100%;
         height: 90vh;
-        background-image: url("background_desktop.png");
+        background-image: url("background_desktop_locked.png");
         background-size: cover; 
         background-position: center; 
         background-repeat: no-repeat;
@@ -79,7 +79,7 @@
         .hero {
         width: 100%;
         height: 88vh;
-        background-image: url("background_smartphone.png");
+        background-image: url("background_smartphone_locked.png");
         background-size: cover; 
         background-position: center; 
         background-repeat: no-repeat;
@@ -89,7 +89,7 @@
         .hero {
         width: 100%;
         height: 87vh;
-        background-image: url("background_smartphone.png");
+        background-image: url("background_smartphone_locked.png");
         background-size: cover; 
         background-position: center; 
         background-repeat: no-repeat;
@@ -147,6 +147,99 @@
       }
       /*  --------------------------------------------------------------------------------------- */
 
+    ul {
+        list-style: none;
+      }
+
+      li.rassegnaprezzi::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: url("bullet.png") no-repeat center;
+        background-size: contain;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+
+/*  ----------------------------- FORMATTAZIONE CARD RASSEGNA ----------------------------- */
+
+      .card-modern {
+          background: #FFFFFF;
+          border-radius: 16px;
+          padding: 30px 25px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+          transition: all 0.3s ease;
+          border: 1px solid rgba(0,0,0,0.05);
+      }
+
+      .card-modern:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .card-ruda {
+          background: rgba(255, 255, 255, 0.85);
+          backdrop-filter: blur(8px);
+          border-radius: 20px;
+          padding: 40px 30px;
+          border: 1px solid rgba(20,22,29,0.08);
+          box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+          transition: all 0.35s ease;
+      }
+
+      .card-ruda:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+      }
+
+      .card-title {
+          font-weight: 600;
+          color: #14161d;
+          margin-bottom: 5px;
+      }
+
+      .card-subtitle {
+          font-size: 14px;
+          color: #6c757d;
+          margin-bottom: 20px;
+      }
+
+      .card-ruda ul li {
+          padding: 10px 0;
+          font-size: 16px;
+      }
+/*  --------------------------------------------------------------------------------------- */
+
+/*  ---------------------------------------- CAROSELLO ----------------------------------- */
+        .carousel-item {
+          height: 450px;/* Altezza fissa */
+      }
+
+      @media (max-width: 992px) {
+        .carousel-item {
+          height: 600px;/* Altezza fissa */
+      }}
+
+      @media (max-width: 767px) {
+        .carousel-item {
+          height:auto;
+          width: 100vw;
+      }}
+
+      @media  (max-width: 575px) {
+        .carousel-item {
+          height:auto;
+          width: 100vw;
+      }}
+
+    .carousel-item img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover; /* Riempie senza deformare */
+    }
+/*  --------------------------------------------------------------------------------------- */
+
     </style>
   </head>
 
@@ -157,7 +250,7 @@
     <div id="preloader" class="d-flex justify-content-center align-items-center position-fixed vh-100 w-100 bg-white" style="z-index: 9999; top: 0; left: 0;">
       <div class="text-center">
         <!-- Inserisci qui il percorso del tuo logo -->
-        <img src="logo-ruda-white.png" class="logo-pulse" style="height: 200px;"> 
+        <img src="logo-ruda-white.png" class="logo-pulse" style="height: 200px;">
       </div>
     </div>
   <!-------------------------------------------------------------------------------->
@@ -174,7 +267,7 @@
         </button>
 
         <div id="nav" class="collapse navbar-collapse">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2" style="list-style: none">
             <li class="nav-item"><a class="nav-link" href="#ruda">RUDA</a></li>
             <li class="nav-item"><a class="nav-link" href="#gaeta">Dove Siamo?</a></li>
             <li class="nav-item"><a class="nav-link" href="#insegnanti">Insegnanti</a></li>
@@ -202,23 +295,23 @@
 
     <!-- EVENTO -->
     <section id="ruda" class="section-pad anchor-offset">
-      <div class="container align-items-center">
+      <div class="container-fluid align-items-center">
         <div class="row align-items-center g-5">
           <div class="col-lg-12" style="text-align: center;">
             <h2 class="fw-bold" style="color: #14161d">R.U.DA</h2>
             <p style="color: #14161d">
-              “Riviera di Ulisse in Danza” nasce come un’opportunità unica per</br>
-              approfondire lo studio della danza e vivere un autentico momento di confronto con altri allievi e</br>
+              “Riviera di Ulisse in Danza” nasce come un’opportunità unica per<br>
+              approfondire lo studio della danza e vivere un autentico momento di confronto con altri allievi e<br>
               Maestri di alto livello.
             </p>
             <p style="color: #14161d">
-              Tre giorni intensi, interamente dedicati alla danza, durante i quali i partecipanti potranno</br>
-              perfezionare la propria tecnica, ampliare il proprio bagaglio artistico ed esplorare</br>
+              Tre giorni intensi, interamente dedicati alla danza, durante i quali i partecipanti potranno<br>
+              perfezionare la propria tecnica, ampliare il proprio bagaglio artistico ed esplorare<br>
               le infinite sfumature espressive di quest’arte.
             </p>
             <p style="color: #14161d">
-              L’evento culminerà la sera dell’ultima giornata con una rassegna finale: un’occasione preziosa</br>
-              per portare in scena nuove e precedenti esperienze, condividendo il palco in un clima sereno,</br>
+              L’evento culminerà la sera dell’ultima giornata con una rassegna finale: un’occasione preziosa<br>
+              per portare in scena nuove e precedenti esperienze, condividendo il palco in un clima sereno,<br>
               privo della pressione della competizione, e celebrando la danza in un vero tripudio di coreografie.
             </p>
           </div>
@@ -228,27 +321,88 @@
 
     <!-- LOCATION  (parlare di gaeta ed inserire foto sale danza) -->
     <section id="gaeta" class="section-pad bg-light anchor-offset" style="padding-top: 0px;">
-      <div class="container align-items-center">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-12" style="text-align: center;">
+      <div class="container my-5">
+        <div class="row align-items-left g-5">
+          <div class="col-12" style="text-align: left;">
             <h2 class="fw-bold" style="color: #14161d">Dove siamo?</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5" style="text-align: left;">
             <p style="color: #14161d">
-              Gaeta è un affascinante borgo dalle origini antichissime, capace di conquistare chiunque grazie</br>
+              Gaeta è un affascinante borgo dalle origini antichissime, capace di conquistare chiunque grazie<br>
               al perfetto equilibrio tra patrimonio storico, cultura e straordinarie bellezze naturalistiche.
             </p>
             <p style="color: #14161d">
-              La città si sviluppa in due anime ben distinte ma complementari:</br>
-              da un lato la parte più moderna, rinomata località balneare insignita da anni</br>
-              della Bandiera Blu, con le sue spiagge curate e il mare cristallino;</br>
-              dall’altro il suggestivo centro storico medievale, un intreccio di vicoli, scalinate e campanili</br>
+              La città si sviluppa in due anime ben distinte ma complementari:<br>
+              da un lato la parte più moderna, rinomata località balneare insignita da anni<br>
+              della Bandiera Blu, con le sue spiagge curate e il mare cristallino;<br>
+              dall’altro il suggestivo centro storico medievale, un intreccio di vicoli, scalinate e campanili<br>
               che, al calare della sera, si anima tra luci soffuse, aperitivi vista mare e una vivace movida.
             </p>
             <p style="color: #14161d">
-              Con il celebre Parco Regionale di Monte Orlando a fare da cornice,</br>
-              Gaeta e il suo splendido golfo rappresentano il cuore pulsante della Riviera di Ulisse,</br>
+              Con il celebre Parco Regionale di Monte Orlando a fare da cornice,<br>
+              Gaeta e il suo splendido golfo rappresentano il cuore pulsante della Riviera di Ulisse,<br>
               un luogo dove natura, storia e atmosfera si fondono in un’esperienza unica.
             </p>
           </div>
+<!-----------------------------------------------  CAROSELLO ----------------------------------------------->
+        <div class="col-md-7">
+          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicatori -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3"></button>
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="4"></button>
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="5"></button>
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="6"></button>
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="7"></button>
+              <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="8"></button>
+            </div>
+
+            <!-- Immagini -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="gaeta1.jpg" class="d-block w-100" alt="Immagine 1">
+              </div>
+              <div class="carousel-item">
+                <img src="gaeta2.jpg" class="d-block w-100" alt="Immagine 2">
+              </div>
+              <div class="carousel-item">
+                <img src="gaeta3.jpg" class="d-block w-100" alt="Immagine 3">
+              </div>
+              <div class="carousel-item">
+                <img src="gaeta4.jpg" class="d-block w-100" alt="Immagine 4">
+              </div>
+              <div class="carousel-item">
+                <img src="gaeta5.jpg" class="d-block w-100" alt="Immagine 5">
+              </div>
+              <div class="carousel-item">
+                <img src="gaeta6.jpg" class="d-block w-100" alt="Immagine 6">
+              </div>
+              <div class="carousel-item">
+                <img src="gaeta7.jpg" class="d-block w-100" alt="Immagine 7">
+              </div>
+              <div class="carousel-item">
+                <img src="gaeta8.jpg" class="d-block w-100" alt="Immagine 8">
+              </div>
+              <div class="carousel-item">
+                <img src="gaeta9.jpg" class="d-block w-100" alt="Immagine 9">
+              </div>
+            </div>
+
+            <!-- Controlli -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </div>
+<!--------------------------------------------------------------------------------------------------------->
         </div>
       </div>
     </section>
@@ -288,45 +442,48 @@
             <h2 class="fw-bold" style="color: #14161d;">RASSEGNA</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12 col-lg-4 p-card mb-sm-5 mb-md-5" style="border-width: 1px; border-style: solid; border-color: #14161d; border-radius: 10px;">
-            <div>
-              <h4 class="text-center text-md-left" style="height: 70px; padding-top: 25px;">Quota standard
-                <div style="font-size: small;">quota addizionale per ulteriori coreografie: 15€</div>
-              </h4>
+        <div class="row g-4 mt-4">
+
+          <div class="col-12 col-lg-4">
+            <div class="card-ruda h-100 text-center">
+              <h4 class="card-title">Quota standard</h4>
+              <p class="card-subtitle">Quota addizionale per ulteriori coreografie: 15€</p>
               <hr>
-              <div class="row no-gutters text-center text-md-left"></div>
-              <ul>
-                <li><strong>Solista</strong> 30€</li>
-                <li><strong>Duo o Trio</strong> 25€ /<span style="font-size: small;">persona</span></li>
-                <li><strong>Gruppo 4<sup>+</sup></strong> 20€ /<span style="font-size: small;">persona</span></li>          
+
+              <ul class="list-unstyled">
+                <li class="rassegnaprezzi"><strong>Solista</strong> → 30€</li>
+                <li class="rassegnaprezzi"><strong>Duo o Trio</strong> → 25€ /<span style="font-size: small;">persona</span></li>
+                <li class="rassegnaprezzi"><strong>Gruppo 4<sup>+</sup></strong> → 20€ /<span style="font-size: small;">persona</span></li>
               </ul>
             </div>
           </div>
-          <div class="col-12 col-lg-4 p-card mb-sm-5 mb-md-5" style="border-width: 1px; border-style: solid; border-color: #14161d; border-radius: 10px;">
-            <div>
-              <h4 class="text-center text-md-left" style="height: 70px; padding-top: 32px;">Quota partecipanti RUDA</h4>
+
+          <div class="col-12 col-lg-4">
+            <div class="card-ruda h-100 text-center">
+              <h4 class="card-title">Quota partecipanti RUDA</h4>
               <hr>
-              <div class="row no-gutters text-center text-md-left"></div>
-              <ul>
-                <li><strong>Solista</strong> 20€</li>
-                <li><strong>Duo o Trio</strong> 15€ /<span style="font-size: small;">persona</span></li>
-                <li><strong>Gruppo 4<sup>+</sup></strong> 10€ /<span style="font-size: small;">persona</span></li>
+
+              <ul class="list-unstyled">
+                <li class="rassegnaprezzi"><strong>Solista</strong> → 20€</li>
+                <li class="rassegnaprezzi"><strong>Duo o Trio</strong> → 15€ /<span style="font-size: small;">persona</span></li>
+                <li class="rassegnaprezzi"><strong>Gruppo 4<sup>+</sup></strong> → 10€ /<span style="font-size: small;">persona</span></li>
               </ul>
             </div>
           </div>
-          <div class="col-12 col-lg-4 p-card mb-sm-5 mb-md-5" style="border-width: 1px; border-style: solid; border-color: #14161d; border-radius: 10px;">
-            <div>
-              <h4 class="text-center text-md-left" style="height: 70px; padding-top: 32px;">Durata massima esibizione</h4>
+
+          <div class="col-12 col-lg-4">
+            <div class="card-ruda h-100 text-center">
+              <h4 class="card-title">Durata massima esibizione</h4>
               <hr>
-              <div class="row no-gutters text-center text-md-left"></div>
-              <ul>
-                <li><strong>Solista</strong> - 2'30''</li>
-                <li><strong>Duo o Trio</strong> - 3’</li>
-                <li><strong>Gruppo 4<sup>+</sup></strong> - 4’</li>             
+
+              <ul class="list-unstyled">
+                <li class="rassegnaprezzi"><strong>Solista</strong> → 2'30''</li>
+                <li class="rassegnaprezzi"><strong>Duo o Trio</strong> → 3’</li>
+                <li class="rassegnaprezzi"><strong>Gruppo 4<sup>+</sup></strong> → 4’</li>
               </ul>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -499,5 +656,3 @@
 
   </body>
 </html>
-
-
