@@ -1,32 +1,81 @@
-
 <!doctype html>
 <html lang="it">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "RUDA – Riviera di Ulisse in Danza",
-  "description": "Evento estivo di danza a Gaeta con stage, workshop e rassegna finale.",
-  "startDate": "2026-07-8",
-  "endDate": "2026-07-10",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "location": {
-    "@type": "Place",
-    "name": "Il Centro del Movimento",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Gaeta",
-      "addressCountry": "IT"
-    }
+  "@type": "DanceSchool",
+  "@id": "https://rivieradiulisseindanza.com/#danceschool",
+  "name": "Riviera di Ulisse in Danza",
+  "url": "https://rivieradiulisseindanza.com",
+  "logo": "https://rivieradiulisseindanza.com/images/logo.png",
+  "image": "https://rivieradiulisseindanza.com/images/scuola-danza.jpg",
+  "description": "Stage di danza Riviera di Ulisse in danza per bambini, ragazzi e adulti.",
+  "telephone": "+393442826051",
+  "email": "info@rivieradiulisseindanza.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "VIA MONTEGRAPPA 57",
+    "addressLocality": "GAETA",
+    "addressRegion": "LT",
+    "postalCode": "04024",
+    "addressCountry": "IT"
   },
-  "image": [
-    "https://rivieradiulisseindanza.com/background_desktop_locked.png"
+  "areaServed": {
+    "@type": "Place",
+    "name": "Riviera di Ulisse"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "41.216748",
+    "longitude": "13.569055"
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61586740567365",
+    "https://www.instagram.com/ruda.gaeta/"
+    "https://www.tiktok.com/@ruda.gaeta"
+    "https://www.youtube.com/@RUDADanceCamp"
   ],
-  "organizer": {
-    "@type": "Organization",
-    "name": "RUDA"
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "10:00",
+    "closes": "21:00"
+  }],
+  "priceRange": "€"
+
+    "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Stage e Rassegna RUDA",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Stage RUDA"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Stage RUDA KIDS"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Rassegna di Danza"
+        }
+      }
+      ]
   }
 }
 </script>
@@ -812,6 +861,7 @@
 
   </body>
 </html>
+
 
 
 
