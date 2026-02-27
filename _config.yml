@@ -2,10 +2,9 @@
 title: RUDA
 email: info@rivieradiulisseindanza.com
 description: >-
-  A short description of your site that will appear in search engines
-  and when shared on social media.
-baseurl: "" # Leave empty if hosted at username.github.io
-url: "https://yourusername.github.io" # Replace with your URL
+  Riviera di Ulisse in danza è uno stage di danza con rassegna finale ospitato nella città di Gaeta
+baseurl: "https://rivieradiulisseindanza.com" # Leave empty if hosted at username.github.io
+url: "https://rivieradiulisseindanza.com" # Replace with your URL
 
 # Author Info (used by SEO plugin)
 author:
