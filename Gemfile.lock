@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    builder (3.3.0)
+    sitemap_generator (6.3.0)
+      builder (~> 3.0)
+
+PLATFORMS
+  x64-mingw-ucrt
+
+DEPENDENCIES
+  sitemap_generator
+
+BUNDLED WITH
+   2.6.9
