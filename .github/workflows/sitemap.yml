@@ -1,0 +1,38 @@
+name: Generate Local SEO Sitemap
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url: https://rivieradiulisseindanza.com
+          path-to-root: .
+          include-html: true
+          changefreq: weekly
+          priority: 0.8
+          exclude-paths: |
+            404.html
+            thank-you.html
+
+      - name: Commit and push sitemap
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add sitemap.xml
+          git commit -m "Auto-update SEO sitemap" || echo "No changes to commit"
+          git push
