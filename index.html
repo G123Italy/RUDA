@@ -824,10 +824,9 @@
         <div class="row mt-5">
           <div class="col-12">
             <div id="rassegnaCarousel" 
-              class="carousel slide carousel-fade" 
-              data-bs-ride="carousel"
-              data-bs-interval="6500"
-              data-bs-pause="hover">
+             class="carousel slide carousel-fade"
+             data-bs-interval="6500"
+             data-bs-pause="hover">
 
             <div class="carousel-inner rounded-4 shadow">
 
@@ -1134,6 +1133,32 @@
     thumbContainer.scrollBy({ left: 300, behavior: 'smooth' });
   });
 </script>
+
+          <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const carouselElement = document.querySelector('#rassegnaCarousel');
+  const carousel = new bootstrap.Carousel(carouselElement, {
+    interval: 6500,
+    pause: "hover",
+    ride: false   // NON parte automaticamente
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        carousel.cycle();   // Avvia autoplay
+      } else {
+        carousel.pause();   // Ferma quando esce dalla viewport
+      }
+    });
+  }, {
+    threshold: 0.6 // parte quando il 60% è visibile
+  });
+
+  observer.observe(carouselElement);
+});
+</script>
 <!--------------------------------------------------------------------------------------------------->
 
 <!---------------------------------------------- POP UP CONVENZIONI  -------------------------------->
@@ -1190,6 +1215,7 @@
 
   </body>
 </html>
+
 
 
 
