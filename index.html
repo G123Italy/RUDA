@@ -357,16 +357,13 @@
       </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="hero d-flex align-items-center" style="color:#14161d; padding-top: 400px; padding-left: 125px;">
-      <div class="container-fluid">
-        <div class="row justify-content-start g-5">
-          <div class="col-lg-5">
-            <h1 class="d-none fw-bold">RUDA – Riviera di Ulisse in Danza<br> Evento di Danza a Gaeta – Estate 2026</h1>
-            <p class="d-none lead">Tre giorni di stage, workshop e rassegna finale nella splendida cornice di Gaeta. Formazione, mare e passione in un’unica esperienza.</p>
-          </div>
-        </div>
-      </div>
+    <!-- HERO VIDEO -->
+    <header class="hero-video">
+      <video autoplay muted loop playsinline class="video-bg">
+        <source src="TrailerInsegnanti.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay"></div>
+      <div class="hero-content text-center"></div>
     </header>
 
     <!-- EVENTO -->
@@ -790,7 +787,18 @@
     </script>
     <!-------------------------------------------------------------------------------------->
 
-
+<!-------------------------------------------- SOLO UN VIDEO IN PLAY  ------------------------------->
+    <script>
+      document.addEventListener('play', function(e){
+          var videos = document.getElementsByTagName('video');
+          for(var i=0; i<videos.length; i++){
+              if(videos[i] != e.target){
+                  videos[i].pause();
+              }
+          }
+      }, true);
+    </script>
+<!--------------------------------------------------------------------------------------------------->
 <!------------------------------------------ POP UP CONVENZIONI  ---------------------------->
     <!-- Secondo Modal -->
     <div class="modal fade" id="convenzioneModal2" tabindex="-1">
@@ -845,6 +853,7 @@
 
   </body>
 </html>
+
 
 
 
