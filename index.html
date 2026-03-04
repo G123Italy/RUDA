@@ -1,148 +1,137 @@
+
 <!doctype html>
 <html lang="it">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "DanceSchool",
-  "@id": "https://rivieradiulisseindanza.com/#danceschool",
-  "name": "RUDA",
-  "url": "https://rivieradiulisseindanza.com",
-  "logo": "https://rivieradiulisseindanza.com/images/logo.png",
-  "image": "https://rivieradiulisseindanza.com/images/scuola-danza.png",
-  "description": "Stage di danza Riviera di Ulisse in danza per bambini, ragazzi e adulti.",
-  "telephone": "+393442826051",
-  "email": "info@rivieradiulisseindanza.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "VIA EUROPA, 46A ",
-    "addressLocality": "GAETA",
-    "addressRegion": "LT",
-    "postalCode": "04024",
-    "addressCountry": "IT"
-  },
-  "areaServed": {
+  "@type": "Event",
+  "name": "RUDA – Riviera di Ulisse in Danza",
+  "description": "Evento estivo di danza a Gaeta con stage, workshop e rassegna finale.",
+  "startDate": "2026-07-8",
+  "endDate": "2026-07-10",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
     "@type": "Place",
-    "name": "Riviera di Ulisse"
+    "name": "Il Centro del Movimento",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gaeta",
+      "addressCountry": "IT"
+    }
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "41.216748",
-    "longitude": "13.569055"
-  },
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61586740567365",
-    "https://www.instagram.com/ruda.gaeta/"
-    "https://www.tiktok.com/@ruda.gaeta"
-    "https://www.youtube.com/@RUDADanceCamp"
+  "image": [
+    "https://rivieradiulisseindanza.com/background_desktop_locked.png"
   ],
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "10:00",
-    "closes": "21:00"
-  }],
-  "priceRange": "€"
-
-    "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Stage e Rassegna RUDA",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Stage RUDA"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Stage RUDA KIDS"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Rassegna di Danza"
-        }
-      }
-      ]
+  "organizer": {
+    "@type": "Organization",
+    "name": "RUDA"
   }
 }
 </script>
 
   <head>
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>RUDA</title>
+    <meta name="description" content="Evento estivo a Gaeta: musica, mare, street food e attività al tramonto. Prenota ora." />
+
+    <meta property="og:title" content="RUDA" />
+    <meta property="og:description" content="Camp estivo di Danza a Gaeta, tre giorni di stage, laboratori e rassegna finale nella splendida Gaeta. Un’esperienza unica di danza sul mare." />
+    <meta property="og:image" content="https://rivieradiulisseindanza.com/background_desktop_locked.png" />
+    <meta property="og:url" content="https://rivieradiulisseindanza.com/" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" href="RUDA.ico"/>
     
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="Yv9o15Cgxu5m3SJy3CfLiKniAGMKthSO_xrpPM47PDY" />
-    <meta name="description" content="Stage estivo con rassegna: la danza per tre giorni è protagonista di Gaeta. Prenota ora." />
-    <meta name="twitter:card" content="summary_large_image">
-    
     <!-- Bootstrap 5.3 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
     <!-- Bootstrap Icons (opzionale ma utile) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- main CSS (opzionale ma utile) -->
-    <link id="main-stylesheet" rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     
-    <link rel="preload" as="image" href="background_desktop.png">
+    <link rel="preload" as="image" href="background_desktop_locked.png">
 
     <style>
       :root { --hero-overlay: rgba(0,0,0,.45); }
-      .hero {
-        width: 100%;
-        height: 91vh;
-        background-image: url("background_desktop.png");
-        background-size: cover; 
-        background-position: center; 
-        background-repeat: no-repeat;
-      }
 
-      @media (max-width: 992px) {
-        .hero {
-        width: 100%;
-        height: 90vh;
-        background-image: url("background_desktop.png");
-        background-size: cover; 
-        background-position: center; 
-        background-repeat: no-repeat;
-      }}
+/* ---------------- VIDEO HERO ---------------- */
 
-      @media (max-width: 767px) {
-        .hero {
-        width: 100%;
-        height: 88vh;
-        background-image: url("background_smartphone.png");
-        background-size: cover; 
-        background-position: center; 
-        background-repeat: no-repeat;
-      }}
+    .hero-video {
+      position: relative;
+      height: 90vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
 
-      @media  (max-width: 575px) {
-        .hero {
-        width: 100%;
-        height: 87vh;
-        background-image: url("background_smartphone.png");
-        background-size: cover; 
-        background-position: center; 
-        background-repeat: no-repeat;
-      }}
+    .video-bg {
+      position: absolute;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit:fill;
+      z-index: -2;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.4),
+        rgba(0,0,0,.75)
+      );
+      z-index: -1;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Fade Animations */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    .fade-in-delay {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .hero-video::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.8) 100%);
+      z-index: -1;
+    }
+
+    .hero-contact h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+/*  --------------------------------------------------------------------------------------- */
 
       .btn-programma {
           /* Variabile dello spessore del bordo */
@@ -195,7 +184,6 @@
         visibility: hidden;
       }
 /*  --------------------------------------------------------------------------------------- */
-
 
 /*  ----------------------------- FORMATTAZIONE CARD RASSEGNA ----------------------------- */
 
@@ -316,12 +304,14 @@
       overflow-y: auto;
       line-height: 1.5;
     }
+
 /*  --------------------------------------------------------------------------------------- */
 
     </style>
   </head>
 
   <body>
+
 
   <!-------------------------------- LOADING SCREEN -------------------------------->
     <div id="preloader" class="d-flex justify-content-center align-items-center position-fixed vh-100 w-100 bg-white" style="z-index: 9999; top: 0; left: 0;">
@@ -346,29 +336,29 @@
         <div id="nav" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2" style="list-style: none">
             <li class="nav-item"><a class="nav-link" href="#ruda">RUDA</a></li>
-            <li class="nav-item"><a class="nav-link" href="#gaeta">Dove Siamo?</a></li>
+            <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
             <li class="nav-item"><a class="nav-link" href="#pass">Pass</a></li>
             <li class="nav-item"><a class="nav-link" href="#rassegna">Rassegna</a></li>
             <li class="nav-item"><a class="nav-link" href="#programma">Programma</a></li>
-            <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+            <li class="nav-item"><a class="nav-link" href="#comeraggiungerci">Come raggiungerci?</a></li>
             <li class="nav-item"><a class="nav-link" href="#contattaci">Contattaci</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- HERO VIDEO -->
-    <header class="hero-video">
-      <video autoplay muted loop playsinline class="video-bg">
-        <source src="TrailerInsegnanti.mp4" type="video/mp4">
-      </video>
-      <div class="video-overlay"></div>
-      <div class="hero-content text-center"></div>
-    </header>
+<!-- HERO VIDEO -->
+<header class="hero-video">
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="TrailerInsegnanti.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
+  <div class="hero-content text-center"></div>
+</header>
 
     <!-- EVENTO -->
     <section id="ruda" class="section-pad anchor-offset">
-      <div class="container py-0">
+      <div class="container py-2">
         <div class="row align-items-center g-5">
           <div class="col-md-6" style="text-align: left;">
           </div>
@@ -410,8 +400,8 @@
     </section>
 
     <!-- LOCATION  (parlare di gaeta ed inserire foto sale danza) -->
-    <section id="gaeta" class="section-pad anchor-offset" style="padding-top: 0px;">
-      <div class="container py-0">
+    <section id="location" class="section-pad anchor-offset" style="padding-top: 0px;">
+      <div class="container py-2">
         <div class="row align-items-left g-0">
           <div class="col-12" style="text-align: left;">
             <h2 class="fw-bold" style="color: #14161d">Dove siamo?</h2>
@@ -451,14 +441,14 @@
 
     <!-- PASS e MODULISTICA (inserire prezzi RUDA e RUDA KIDS + modulistica per l'iscrizione)-->
     <section id="pass" class="section-pad anchor-offset">
-      <div class="container">
+      <div class="container py-2">
         <div class="row align-items-center g-5">
           <div class="col-lg-12" style="text-align: center;">
             <h2 class="fw-bold mb-1">INGRESSO</h2>
           </div>
           <div class="row align-items-center g-3">
             <div class="col-lg-12" style="text-align:center">
-              <div class="fw-bold mb-1"><img src="Ingresso.png" style="max-height:100vh; height:auto; max-width:75vw; min-width:30vw; "></div>
+              <img src="Ingresso.png" style="max-height:100vh; height:auto; max-width:50vw; min-width:30vw;">
             </div>
           </div>
         </div>
@@ -467,7 +457,7 @@
 
     <!-- RASSEGNA -->
     <section id="rassegna" class="section-pad bg-light anchor-offset">
-     <div class="container">
+     <div class="container py-2">
         <div class="row">
           <div class="col-12 text-center">
             <h2 class="fw-bold" style="color: #14161d;">RASSEGNA</h2>
@@ -521,7 +511,7 @@
 
     <!-- PROGRAMMA -->
     <section id="programma" class="section-pad anchor-offset">
-      <div class="container">
+      <div class="container py-2">
         <div class="row align-items-center g-5">
           <div class="col-lg-12"">
             <h2 class="fw-bold mb-1" style="color: #14161d;">PROGRAMMA</h2>
@@ -545,9 +535,9 @@
       </div>
     </section>
 
-    <!-- LOCATION -->
-    <section id="location" class="section-pad bg-light anchor-offset">
-      <div class="container">
+    <!-- COME RAGGIUNGERCI -->
+    <section id="comeraggiungerci" class="section-pad bg-light anchor-offset">
+      <div class="container py-2">
         <div class="row g-5 align-items-center">
           <div class="col-lg-5">
             <h2 class="fw-bold">Come raggiungerci?</h2>
@@ -588,10 +578,10 @@
 
     <!-- CONVENZIONI -->
     <section id="convenzioni" class="section-pad anchor-offset">
-      <div class="container py-5">
+      <div class="container py-2">
         <div class="row align-items-center g-5">
           <div class="col-lg-12" style="text-align: center;">
-            <h2 class="fw-bold mb-1" style="color: #14161d;">Le nostre convenzioni</h2>
+            <h2 class="fw-bold mb-1" style="color: #14161d;">CONVENZIONI</h2>
           </div>
         <div class="row">
 
@@ -599,7 +589,7 @@
           <div class="col-md-6 col-content col-left">
             <h4 class="fw-bold mb-3" style="text-align:center">FOOD & BEVERAGE</h4>
             <div class="overlay-card"
-              style="background-image: url('LaRete.png');"
+              style="background-image: url('LaRete.png'); background-size:65%; background-repeat: no-repeat;"
               data-bs-toggle="modal"
               data-bs-target="#convenzioneModal2"
               data-name2="Hostaria Pizzeria - La Rete"
@@ -677,7 +667,7 @@
                   CONVENZIONE STANZE:
                   <ul style="list-style:disc">
                     <li>Doppia → 50€/persona</li>
-                    <li>Tripla/Quadrupla → 43€/peronsa</li>
+                    <li>Tripla/Quadrupla → 43€/persona</li>
                   </ul>
                   COLAZIONE INCLUSA.<p>
                 <p>La convenzione può essere applicata solo entro il <strong>31 Maggio</strong> a seguito della prenotazione di <strong>3 pernottamenti</strong> e consegna della <strong>caparra confirmatoria (40%)</strong>.</p> 
@@ -701,7 +691,7 @@
 
     <!-- PRENOTA -->
     <section id="contattaci" class="section-pad bg-light anchor-offset">
-      <div class="container">
+      <div class="container py-2">
         <div class="row g-4 align-items-center">
           <div class="col-lg-6">
             <h2 class="fw-bold">Contattaci!</h2>
@@ -756,7 +746,7 @@
 
     <!-- FOOTER -->
     <footer class="border-top py-4">
-      <div class="container">
+      <div class="container py-2">
         <div class="row g-3 align-items-center">
           <div class="col-md-6 text-muted small">
             RUDA® è un marchio registrato — Tutti i diritti sono riservati
@@ -776,7 +766,7 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 
-    <!-------------------------------- SCRIPT LOADING SCREEN -------------------------------->
+    <!------------------------------------ SCRIPT LOADING SCREEN ------------------------------------>
     <script>
       window.addEventListener("load", function() {
           const preloader = document.getElementById("preloader");
@@ -785,7 +775,8 @@
           }, 500); // Ritardo extra di 0.5s per mostrare il logo anche se il sito è veloce
       });
     </script>
-    <!-------------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------------------->
+
 
 <!-------------------------------------------- SOLO UN VIDEO IN PLAY  ------------------------------->
     <script>
@@ -799,7 +790,7 @@
       }, true);
     </script>
 <!--------------------------------------------------------------------------------------------------->
-<!------------------------------------------ POP UP CONVENZIONI  ---------------------------->
+<!---------------------------------------------- POP UP CONVENZIONI  -------------------------------->
     <!-- Secondo Modal -->
     <div class="modal fade" id="convenzioneModal2" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -849,24 +840,7 @@
         }
       });
     </script>
-<!-------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------->
 
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
